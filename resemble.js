@@ -44,7 +44,7 @@ var getGlobalThis = function () {
 
 var isNode = function () {
     const globalPolyfill = getGlobalThis();
-    return typeof globalPolyfill.process !== "undefined" && globalPolyfill.process.versions && globalPolyfill.process.versions.node;
+    return typeof globalPolyfill.process !== "undefined" && typeof globalPolyfill.fs !== "undefined" && typeof globalPolyfill.child_process !== "undefined" && globalPolyfill.process.versions && globalPolyfill.process.versions.node;
 };
 
 (function (root, factory) {
